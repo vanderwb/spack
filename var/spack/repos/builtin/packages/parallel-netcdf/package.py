@@ -60,7 +60,8 @@ class ParallelNetcdf(AutotoolsPackage):
     variant("pic", default=True, description="Produce position-independent code (for shared libs)")
     variant("shared", default=True, description="Enable shared library")
     variant("burstbuffer", default=False, description="Enable burst buffer feature")
-    variant("examples", when="@1.13:", default=False, description="Install example programs")
+    variant("examples", default=False, description="Install example programs")
+    conflicts("+examples", when="@:1.12")
 
     depends_on("mpi")
 
