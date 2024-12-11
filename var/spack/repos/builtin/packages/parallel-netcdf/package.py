@@ -132,7 +132,7 @@ class ParallelNetcdf(AutotoolsPackage):
             flags["FCFLAGS"].append(self.compiler.fc_pic_flag)
 
         # https://github.com/Parallel-NetCDF/PnetCDF/issues/61
-        if self.spec.satisfies("@:1.12") and self.spec.satisfies("%gcc@10:"):
+        if self.spec.satisfies("@:1.12.1%gcc@10:"):
             flags["FFLAGS"].append("-fallow-argument-mismatch")
             flags["FCFLAGS"].append("-fallow-argument-mismatch")
 
